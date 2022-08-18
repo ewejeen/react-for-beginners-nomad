@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Movie from "../components/Movie";
+import styles from "./Home.module.css";
 
 function Detail() {
   const { id } = useParams();
@@ -19,24 +20,36 @@ function Detail() {
   useEffect(() => {
     getMovie();
   }, []);
-  console.log(movie);
+
   return (
-    <div>
-      {loading ? (
-        <h1>Loading...</h1>
-      ) : (
-        <div>
-          <Movie
-            key={movie.id}
-            coverImage={movie.medium_cover_image}
-            title={movie.title}
-            summary={movie.description_full}
-            genres={movie.genres}
-            id={movie.id}
-          />
+    <>
+      <div className={styles.container}>
+        {loading ? (
+          <div className={styles.loader}>
+            <span>Loading...</span>
+          </div>
+        ) : (
+          <div className={styles.movie__detail}>
+            <Movie
+              key={movie.id}
+              coverImage={movie.medium_cover_image}
+              title={movie.title}
+              summary={movie.description_full}
+              genres={movie.genres}
+              id={movie.id}
+            />
+          </div>
+        )}
+      </div>
+
+      {loading ? null : (
+        <div className={styles.btn__div}>
+          <button className={styles.btn__list}>
+            <Link to="/">Back to list</Link>
+          </button>
         </div>
       )}
-    </div>
+    </>
   );
 }
 
