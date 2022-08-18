@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/react-for-beginners-nomad/static/js/main.d385aafd.js",
-    "index.html": "/react-for-beginners-nomad/index.html",
-    "main.d385aafd.js.map": "/react-for-beginners-nomad/static/js/main.d385aafd.js.map"
+    "main.js": "/react-for-beginners-nomad2/static/js/main.d385aafd.js",
+    "index.html": "/react-for-beginners-nomad2/index.html",
+    "main.d385aafd.js.map": "/react-for-beginners-nomad2/static/js/main.d385aafd.js.map"
   },
   "entrypoints": [
     "static/js/main.d385aafd.js"
